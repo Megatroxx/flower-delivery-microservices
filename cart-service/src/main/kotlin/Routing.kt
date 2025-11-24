@@ -12,10 +12,11 @@ import io.ktor.server.request.*
 import io.ktor.server.response.*
 import io.ktor.server.routing.*
 
-fun Application.configureRouting() {
+fun Application.configureRouting(
+    cartService: CartService = CartService(CartRepository())
+) {
 
-    val repo = CartRepository()
-    val service = CartService(repo)
+    val service = cartService
 
     routing {                     // ← добавляем это!
 

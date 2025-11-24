@@ -18,10 +18,13 @@ import io.ktor.server.response.*
 import io.ktor.server.routing.*
 import org.jetbrains.exposed.sql.*
 
-fun Application.configureRouting() {
+fun Application.configureRouting(
+    catalogRepository: CatalogRepository = CatalogRepository(),
+    catalogService: CatalogService = CatalogService(catalogRepository)
+) {
 
-    val repo = CatalogRepository()
-    val service = CatalogService(repo)
+    val repo = catalogRepository
+    val service = catalogService
 
     routing {
         get("/catalog/{flowerId}") {

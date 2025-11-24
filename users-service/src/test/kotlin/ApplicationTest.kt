@@ -9,11 +9,11 @@ import kotlin.test.assertEquals
 class ApplicationTest {
 
     @Test
-    fun testRoot() = testApplication {
+    fun usersListReturnsOk() = testApplication {
         application {
             module()
         }
-        client.get("/").apply {
+        client.get("/users/list").apply {
             assertEquals(HttpStatusCode.OK, status)
         }
     }

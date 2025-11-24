@@ -15,9 +15,11 @@ import io.ktor.server.response.*
 import io.ktor.server.routing.*
 import org.jetbrains.exposed.sql.*
 
-fun Application.configureRouting() {
+fun Application.configureRouting(
+    deliveryService: DeliveryService = DeliveryService(DeliveryRepository())
+) {
 
-    val service = DeliveryService(DeliveryRepository())
+    val service = deliveryService
 
     routing {
 

@@ -19,12 +19,14 @@ import io.ktor.server.response.*
 import io.ktor.server.routing.*
 import org.jetbrains.exposed.sql.*
 
-fun Application.configureRouting() {
-
-    val service = OrderService(
+fun Application.configureRouting(
+    orderService: OrderService = OrderService(
         OrderRepository(),
         producer = RabbitMQProducer()
     )
+) {
+
+    val service = orderService
 
     routing {
 

@@ -9,11 +9,14 @@ import kotlin.test.assertEquals
 class ApplicationTest {
 
     @Test
-    fun testRoot() = testApplication {
+    fun refundEndpointReturnsOk() = testApplication {
         application {
             module()
         }
-        client.get("/").apply {
+        client.post("/payments/refund") {
+            contentType(ContentType.Application.Json)
+            setBody("""{"orderId":"test-order","amount":100}""")
+        }.apply {
             assertEquals(HttpStatusCode.OK, status)
         }
     }

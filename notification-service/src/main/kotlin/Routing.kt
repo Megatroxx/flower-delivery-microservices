@@ -15,9 +15,11 @@ import io.ktor.server.response.*
 import io.ktor.server.routing.*
 import org.jetbrains.exposed.sql.*
 
-fun Application.configureRouting() {
+fun Application.configureRouting(
+    notificationService: NotificationService = NotificationService(UsersClient())
+) {
 
-    val service = NotificationService(UsersClient())
+    val service = notificationService
 
     routing {
 
