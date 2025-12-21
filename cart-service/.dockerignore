@@ -1,0 +1,30 @@
+# Gradle
+.gradle/
+build/
+gradlew.bat
+
+# IDE
+.idea/
+*.iml
+.vscode/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Database
+*.db
+*.db-shm
+*.db-wal
+
+# Logs
+*.log
+
+# Test results
+test-results/
+reports/
+
+# Git
+.git/
+.gitignore
+
