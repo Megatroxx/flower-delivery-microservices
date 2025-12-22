@@ -5,7 +5,7 @@
     <option name="linkedExternalProjectsSettings">
       <GradleProjectSettings>
         <option name="externalProjectPath" value="$PROJECT_DIR$/cart-service" />
-        <option name="gradleJvm" value="#JAVA_HOME" />
+        <option name="gradleJvm" value="20" />
         <option name="modules">
           <set>
             <option value="$PROJECT_DIR$/cart-service" />
@@ -14,7 +14,7 @@
       </GradleProjectSettings>
       <GradleProjectSettings>
         <option name="externalProjectPath" value="$PROJECT_DIR$/catalog-service" />
-        <option name="gradleJvm" value="#JAVA_HOME" />
+        <option name="gradleJvm" value="20" />
         <option name="modules">
           <set>
             <option value="$PROJECT_DIR$/catalog-service" />
@@ -23,7 +23,7 @@
       </GradleProjectSettings>
       <GradleProjectSettings>
         <option name="externalProjectPath" value="$PROJECT_DIR$/delivery-service" />
-        <option name="gradleJvm" value="#JAVA_HOME" />
+        <option name="gradleJvm" value="20" />
         <option name="modules">
           <set>
             <option value="$PROJECT_DIR$/delivery-service" />
@@ -32,7 +32,7 @@
       </GradleProjectSettings>
       <GradleProjectSettings>
         <option name="externalProjectPath" value="$PROJECT_DIR$/feedback-service" />
-        <option name="gradleJvm" value="#JAVA_HOME" />
+        <option name="gradleJvm" value="20" />
         <option name="modules">
           <set>
             <option value="$PROJECT_DIR$/feedback-service" />
@@ -41,7 +41,7 @@
       </GradleProjectSettings>
       <GradleProjectSettings>
         <option name="externalProjectPath" value="$PROJECT_DIR$/notification-service" />
-        <option name="gradleJvm" value="#JAVA_HOME" />
+        <option name="gradleJvm" value="20" />
         <option name="modules">
           <set>
             <option value="$PROJECT_DIR$/notification-service" />
@@ -50,7 +50,7 @@
       </GradleProjectSettings>
       <GradleProjectSettings>
         <option name="externalProjectPath" value="$PROJECT_DIR$/orders-service" />
-        <option name="gradleJvm" value="#JAVA_HOME" />
+        <option name="gradleJvm" value="20" />
         <option name="modules">
           <set>
             <option value="$PROJECT_DIR$/orders-service" />
@@ -59,7 +59,7 @@
       </GradleProjectSettings>
       <GradleProjectSettings>
         <option name="externalProjectPath" value="$PROJECT_DIR$/payment-service" />
-        <option name="gradleJvm" value="#JAVA_HOME" />
+        <option name="gradleJvm" value="20" />
         <option name="modules">
           <set>
             <option value="$PROJECT_DIR$/payment-service" />
@@ -68,7 +68,7 @@
       </GradleProjectSettings>
       <GradleProjectSettings>
         <option name="externalProjectPath" value="$PROJECT_DIR$/users-service" />
-        <option name="gradleJvm" value="#JAVA_HOME" />
+        <option name="gradleJvm" value="20" />
         <option name="modules">
           <set>
             <option value="$PROJECT_DIR$/users-service" />
