@@ -82,3 +82,26 @@ jobs:
         run: |
           docker push cr.yandex/${{ secrets.YC_REGISTRY_ID }}/${{ env.IMAGE_NAME }}:latest
           docker push cr.yandex/${{ secrets.YC_REGISTRY_ID }}/${{ env.IMAGE_NAME }}:${{ github.sha }}
+
+  deploy:
+    name: Deploy to Serverless Container
+    runs-on: ubuntu-latest
+    needs: build-and-push
+    if: github.event_name == 'push' && (github.ref == 'refs/heads/main' || github.ref == 'refs/heads/master')
+
+    steps:
+      - name: Deploy serverless container
+        uses: yc-actions/yc-sls-container-deploy@v2
+        with:
+          yc-sa-json-credentials: ${{ secrets.YC_KEYS }}
+          container-name: ${{ secrets.YC_CONTAINER_NAME }}
+          folder-id: ${{ secrets.YC_FOLDER_ID }}
+          revision-service-account-id: ${{ secrets.YC_SA_ID }}
+          revision-cores: 1
+          revision-memory: 512Mb
+          revision-core-fraction: 100
+          revision-concurrency: 4
+          revision-image-url:  cr.yandex/${{ secrets.YC_REGISTRY_ID }}/catalog-service:latest
+          revision-execution-timeout: 30s
+          revision-env: |
+            POSTGRES_URL=${{ secrets.ENV_POSTGRES_URL }}

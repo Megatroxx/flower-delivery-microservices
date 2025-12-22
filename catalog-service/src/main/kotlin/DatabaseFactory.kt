@@ -8,7 +8,14 @@ import org.jetbrains.exposed.sql.transactions.transaction
 object DatabaseFactory {
 
     fun init() {
-        Database.connect("jdbc:sqlite:catalog.db", driver = "org.sqlite.JDBC")
+
+        val postgresUrl = System.getenv("POSTGRES_URL")
+
+        if (postgresUrl != null) {
+            Database. connect(postgresUrl)
+        } else {
+            Database. connect("jdbc:sqlite:catalog. db", driver = "org.sqlite.JDBC")
+        }
 
         transaction {
             SchemaUtils.create(FlowersTable)
