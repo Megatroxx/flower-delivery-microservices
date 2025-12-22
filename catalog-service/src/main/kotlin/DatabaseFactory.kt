@@ -9,13 +9,7 @@ object DatabaseFactory {
 
     fun init() {
 
-        val postgresUrl = System.getenv("POSTGRES_URL")
-
-        if (postgresUrl != null) {
-            Database. connect(postgresUrl)
-        } else {
-            Database. connect("jdbc:sqlite:catalog. db", driver = "org.sqlite.JDBC")
-        }
+        Database.connect("jdbc:sqlite:catalog.db", driver = "org.sqlite.JDBC")
 
         transaction {
             SchemaUtils.create(FlowersTable)
