@@ -37,6 +37,7 @@ fun Application.configureRouting(
                 )
 
             call.respond(flower)
+
         }
 
         authenticate("auth-jwt-admin") {
