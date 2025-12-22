@@ -29,7 +29,7 @@ COPY --from=build /app/build/libs/ ./libs/
 RUN if ls ./libs/*-all.jar 1> /dev/null 2>&1; then \
         cp ./libs/*-all.jar ./app.jar; \
     else \
-        cp ./libs/catalog-service-*.jar ./app. jar; \
+        cp ./libs/catalog-service-*.jar ./app.jar; \
     fi && \
     rm -rf ./libs
 
