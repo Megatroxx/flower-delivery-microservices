@@ -22,6 +22,7 @@ fun Application.configureRouting(
 
         authenticate("auth-jwt") {
 
+
             // Добавить товар в корзину
             post("/cart/items") {
                 val principal = call.principal<JWTPrincipal>()!!
